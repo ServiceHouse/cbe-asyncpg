@@ -256,7 +256,7 @@ setuptools.setup(
     zip_safe=False,
     author='MagicStack Inc',
     author_email='hello@magic.io',
-    url='https://github.com/MagicStack/asyncpg',
+    url="https://github.com/ServiceHouse/cbe-asyncpg",
     license='Apache License, Version 2.0',
     packages=setuptools.find_packages(
         exclude=['tests', 'tools'],
@@ -280,6 +280,7 @@ setuptools.setup(
             extra_compile_args=CFLAGS,
             extra_link_args=LDFLAGS),
     ],
+    include_dirs=['.'],
     install_requires=['typing-extensions>=3.7.4.3;python_version<"3.8"'],
     cmdclass={'build_ext': build_ext, 'build_py': build_py, 'sdist': sdist},
     test_suite='tests.suite',
