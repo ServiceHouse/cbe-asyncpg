@@ -59,22 +59,11 @@ if platform.uname().system != 'Windows':
 
 
 _ROOT = pathlib.Path(__file__).parent
+VERSION = '0.28.0'
 
 
 with open(str(_ROOT / 'README.rst')) as f:
     readme = f.read()
-
-
-with open(str(_ROOT / 'asyncpg' / '_version.py')) as f:
-    for line in f:
-        if line.startswith('__version__ ='):
-            _, _, version = line.partition('=')
-            VERSION = version.strip(" \n'\"")
-            break
-    else:
-        raise RuntimeError(
-            'unable to read the version from asyncpg/_version.py')
-
 
 if (_ROOT / '.git').is_dir() and 'dev' in VERSION:
     # This is a git checkout, use git to
