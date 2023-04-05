@@ -231,7 +231,7 @@ if (not (_ROOT / 'asyncpg' / 'protocol' / 'protocol.c').exists() or
 
 
 setuptools.setup(
-    name='asyncpg',
+    name='cbe-asyncpg',
     version=VERSION,
     description='An asyncio PostgreSQL driver',
     long_description=readme,
